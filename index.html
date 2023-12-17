@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="https://openweathermap.org/img/wn/01d@4x.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather</title>
+  <script type="module" crossorigin src="/forecast-app/assets/index-nyIHlSpn.js"></script>
+  <link rel="stylesheet" crossorigin href="/forecast-app/assets/index-IAxp6sc6.css">
+</head>
+
+<!-- copied design from https://dribbble.com/shots/23152461-App-meteorol-gica-desktop-weather-app -->
+
+<body>
+  <div id="container" class="grid grid-cols-[500px_1fr] [&>div]:min-h-screen min-h-screen transition duration-300
+      bg-cover bg-fixed bg-center bg-no-repeat" style="background-image: url('/forecast-app/assets/rain-EpaiueLM.jpg')">
+    <div class="flex items-center flex-shrink">
+      <div class="panel backdrop-blur-md h-[92%] w-[90%] rounded-r-xl border-gray-100 border-opacity-60
+          border-l-0 border-2 bg-gray-700/70 flex flex-col items-center p-5 flex-shrink">
+          
+          <div id="change-temp" 
+            class="absolute top-6 right-8 bg-gray-200/20 rounded-lg w-20 px-1 py-1 flex justify-between
+            [&>*]:py-2 [&>*]:px-3 [&>*]:rounded-lg [&>*]:select-none [&>*]:font-bold">
+            <span class="fahr z-10 now">F</span>
+            <span id="moving-bg" class="bg-gray-700/90 transition-transform duration-500 absolute w-[33px] h-10 z-0 left left-[5px]"></span>
+            <span class="cels z-10">C</span>
+          </div>
+
+        <div class="flex flex-col items-center gap-4 border-b-white/60 border-2
+            border-x-0 border-t-0 px-20 pb-5 pt-14 w-4/5">
+          <span id="temp-now" class="temp text-7xl text-gray-100 self-center">99</span>
+          <div id="city" class="text-3xl whitespace-nowrap">
+            New York
+          </div>
+          <div>
+            <span id="date-now" class="whitespace-nowrap text-xl">
+              Sunday, 23 January
+            </span>
+          </div>
+        </div>
+        <div class="bot-left flex-1 w-full  py-8 flex items-center ml-14">
+          <div id="days" class="flex flex-col items-center gap-0 text-xs [&>div>div]:rounded-lg [&>div>div]:h-16 h-full 
+              [&>div>div]:bg-gray-500/40 [&>div>div>img]:h-14 justify-around">
+
+            <div class="day flex gap-6">
+              <div class="flex items-center align-middle pr-4 w-3/4">
+                <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="">
+                <span class=" text-xl capitalize">
+                  Sunday, 23 January
+                </span>
+              </div>
+              <span class="day-temp temp text-4xl  border-2 border-l-white/60
+                  text-center self-center pl-5 border-y-0 border-r-0">99</span>
+            </div>
+            <div class="day flex gap-6">
+              <div class="flex items-center align-middle pr-4">
+                <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="">
+                <span class=" text-xl capitalize">
+                  Sunday, 23 January
+                </span>
+              </div>
+              <span class="day-temp temp text-4xl border-2 border-l-white/60
+                  text-center self-center pl-5 border-y-0 border-r-0">99</span>
+            </div>
+
+            <div class="day flex gap-6">
+              <div class="flex items-center align-middle pr-4">
+                <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="">
+                <span class=" text-xl capitalize">
+                  Sunday, 23 January
+                </span>
+              </div>
+              <span class="day-temp temp text-4xl border-2 border-l-white/60
+                  text-center self-center pl-5 border-y-0 border-r-0">99</span>
+            </div>
+
+            <div class="day flex gap-6">
+              <div class="flex items-center align-middle pr-4">
+                <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="">
+                <span class=" text-xl capitalize">
+                  Sunday, 23 January
+                </span>
+              </div>
+              <span class="day-temp temp text-4xl border-2 border-l-white/60
+                  text-center self-center pl-5 border-y-0 border-r-0">99</span>
+            </div>
+
+            <div class="day flex gap-6">
+              <div class="flex items-center align-middle pr-4">
+                <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="">
+                <span class=" text-xl capitalize">
+                  Sunday, 23 January
+                </span>
+              </div>
+              <span class="day-temp temp text-4xl border-2 border-l-white/60
+                  text-center self-center pl-5 border-y-0 border-r-0">99</span>
+            </div>
+
+            <div class="day flex gap-6">
+              <div class="flex items-center align-middle pr-4">
+                <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="">
+                <span class=" text-xl capitalize">
+                  Sunday, 23 January
+                </span>
+              </div>
+              <span class="day-temp temp text-4xl border-2 border-l-white/60
+                  text-center self-center pl-5 border-y-0 border-r-0">99</span>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-rows-[50px_1fr_140px] right-grid justify-center">
+      <div id="parentSearch" class="flex items-center justify-center [&_img]:select-none [&_img]:z-50
+          [&_img]:opacity-60">
+
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20style='fill:white;'%20height='24'%20viewBox='0%20-960%20960%20960'%20width='24'%3e%3cpath%20d='M784-120%20532-372q-30%2024-69%2038t-83%2014q-109%200-184.5-75.5T120-580q0-109%2075.5-184.5T380-840q109%200%20184.5%2075.5T640-580q0%2044-14%2083t-38%2069l252%20252-56%2056ZM380-400q75%200%20127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75%200-127.5%2052.5T200-580q0%2075%2052.5%20127.5T380-400Z'/%3e%3c/svg%3e" alt="" class="find transform scale-x-[-1] relative left-11 w-6 " />
+
+        <input id="search" type="search" name="search" value="" formnovalidate autofocus
+          class="h-8 w-80 text-lg p-3 rounded-lg m-3 mr-0 px-10 focus:outline-none bg-gray-700/80 text-white-100" />
+
+        <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20style='fill:white;'%20height='24'%20viewBox='0%20-960%20960%20960'%20width='24'%3e%3cpath%20d='m256-200-56-56%20224-224-224-224%2056-56%20224%20224%20224-224%2056%2056-224%20224%20224%20224-56%2056-224-224-224%20224Z'/%3e%3c/svg%3e" alt="" class="clear transform scale-x-[1] relative right-8 w-6">
+
+        <!-- absolute div so it doesn't take space as a flex item in #parentSearch -->
+        <div class="absolute h-8 w-80 p-3 translate-y-5 translate-x-1 text-center">
+          <span id="error" class="hidden text-red-600 ">An error has occured</span>
+        </div>
+      </div>
+      <div class="epmty">
+        <!-- empty space for background -->
+      </div>
+      <div id="byTime" class="bh-full p-4 pb-2 gap-6 flex items-center [&>div]:bg-gray-700/90 [&>*]:h-full 
+          overflow-x-scroll self-center mb-5">
+
+        <div class="sep-time current">
+          <span class="temp border-2 border-x-0 border-t-0 text-base text-center w-4/5 pb-1
+              border-white/60 tracking-wider font-normal">99</span>
+          <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="" class="h-12">
+          <span class="time">16:00</span>
+        </div>
+
+        <div class="sep-time">
+          <span class="temp border-2 border-x-0 border-t-0 text-base text-center w-4/5 pb-1
+              border-white/60 tracking-wider font-normal">99</span>
+          <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="" class="h-12">
+          <span class="time">16:00</span>
+        </div>
+
+        <div class="sep-time">
+          <span class="temp border-2 border-x-0 border-t-0 text-base text-center w-4/5 pb-1
+              border-white/60 tracking-wider font-normal">99</span>
+          <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="" class="h-12">
+          <span class="time">16:00</span>
+        </div>
+
+        <div class="sep-time">
+          <span class="temp border-2 border-x-0 border-t-0 text-base text-center w-4/5 pb-1
+              border-white/60 tracking-wider font-normal">99</span>
+          <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="" class="h-12">
+          <span class="time">16:00</span>
+        </div>
+
+        <div class="sep-time">
+          <span class="temp border-2 border-x-0 border-t-0 text-base text-center w-4/5 pb-1
+              border-white/60 tracking-wider font-normal">99</span>
+          <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="" class="h-12">
+          <span class="time">16:00</span>
+        </div>
+
+        <div class="sep-time">
+          <span class="temp border-2 border-x-0 border-t-0 text-base text-center w-4/5 pb-1
+              border-white/60 tracking-wider font-normal">99</span>
+          <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="" class="h-12">
+          <span class="time">16:00</span>
+        </div>
+
+        <div class="sep-time">
+          <span class="temp border-2 border-x-0 border-t-0 text-base text-center w-4/5 pb-1
+              border-white/60 tracking-wider font-normal">99</span>
+          <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="" class="h-12">
+          <span class="time">16:00</span>
+        </div>
+
+        <div class="sep-time">
+          <span class="temp border-2 border-x-0 border-t-0 text-base text-center w-4/5 pb-1
+              border-white/60 tracking-wider font-normal">99</span>
+          <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="" class="h-12">
+          <span class="time">16:00</span>
+        </div>
+
+        <div class="sep-time">
+          <span class="temp border-2 border-x-0 border-t-0 text-base text-center w-4/5 pb-1
+              border-white/60 tracking-wider font-normal">99</span>
+          <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="" class="h-12">
+          <span class="time">16:00</span>
+        </div>
+
+        <div class="sep-time">
+          <span class="temp border-2 border-x-0 border-t-0 text-base text-center w-4/5 pb-1
+              border-white/60 tracking-wider font-normal">99</span>
+          <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="" class="h-12">
+          <span class="time">16:00</span>
+        </div>
+
+        <div class="sep-time">
+          <span class="temp border-2 border-x-0 border-t-0 text-base text-center w-4/5 pb-1
+              border-white/60 tracking-wider font-normal">99</span>
+          <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="" class="h-12">
+          <span class="time">16:00</span>
+        </div>
+
+        <div class="sep-time">
+          <span class="temp border-2 border-x-0 border-t-0 text-base text-center w-4/5 pb-1
+              border-white/60 tracking-wider font-normal">99</span>
+          <img src="//cdn.weatherapi.com/weather/64x64/night/260.png" alt="" class="h-12">
+          <span class="time">16:00</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
